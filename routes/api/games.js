@@ -9,3 +9,5 @@ router.route("/")
 router.route("/:id")
     .get(gamesController.findById)
     .put(gamesController.update)
+
+module.exports = router;

@@ -45,6 +45,16 @@ export default {
             party: "That's Jazz Party"
         }
         return mayor
+    },
+    Fourth: function () {
+        let mayor = {
+            name: nameMaker(names.Fourth),
+            loyalty: attr() + 1,
+            competent: attr(),
+            voidism: attr(),
+            party: "Fourth Party"
+        }
+        return mayor
     }
 }
 

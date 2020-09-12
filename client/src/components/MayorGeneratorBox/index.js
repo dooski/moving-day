@@ -31,6 +31,12 @@ function MayorGeneratorBox() {
         padding: 10
     }
 
+    const fourth = {
+        background: "#B80C09",
+        color: "white",
+        padding: 10
+    }
+
     const mayorcard = {
         background: "black",
         boxShadow: "5px 5px 10px 10px white",
@@ -99,6 +105,12 @@ function MayorGeneratorBox() {
         window.scrollTo(0, mayorRef.current.offsetTop)
     }
 
+    function FMG() {
+        let mayor = MayorMaker.Fourth()
+        setCurrentMayor(mayor)
+        window.scrollTo(0, mayorRef.current.offsetTop)
+    }
+
     function attrTranslate(x) {
         if (x === 0) {
             return "None at All"
@@ -131,7 +143,7 @@ function MayorGeneratorBox() {
             <hr />
             <br />
             <Grid container spacing={3}>
-                <Grid item sm>
+                <Grid item sm={6}>
                     <div style={section}>
                         <Card>
                             <div style={loch} id="ness-card">
@@ -153,7 +165,7 @@ function MayorGeneratorBox() {
                         </Card>
                     </div>
                 </Grid>
-                <Grid item sm>
+                <Grid item sm={6}>
                     <div style={section}>
                         <Card>
                             <div style={business} id="biz-card">
@@ -175,7 +187,7 @@ function MayorGeneratorBox() {
                         </Card>
                     </div>
                 </Grid>
-                <Grid item sm>
+                <Grid item sm={6}>
                     <div style={section}>
                         <Card>
                             <div style={jazz} id="jazz-card">
@@ -196,7 +208,30 @@ function MayorGeneratorBox() {
                         </Card>
                     </div>
                 </Grid>
-            </Grid>
+                <Grid item sm={6}>
+                    <div style={section}>
+                        <Card>
+                            <div style={fourth} id="fourth-card">
+                                <Typography variant="h5" style={title}>FOURTH PARTY</Typography>
+                                <hr />
+                                <Typography variant="body2" style={body}>Finally, a Party for the rest of us! The Fourth Party is the fourth party out
+                                of the four parties. The Party values whatever things haven't already been valued and
+                                is vehemently against whatever things have already been valued. This ends up being a mix of anti-Bigfoot,
+                    pro-dodgeball, pro-disco, and anti-candles.</Typography>
+                                <br />
+                                <Button style={button} id="fourth" onClick={FMG}>
+                                    <Twemoji style={emoji} text=":four:" />
+                                    HEAD EMPTY NO THOUGHTS
+                                    <Twemoji style={emoji} text=":four:" />
+                                </Button>
+                            </div>
+                        </Card>
+                    </div>
+                </Grid>
+            </Grid>{/* Fourth Party
+                    body: Finally, a Party for the rest of us! The Fourth Party is the fourth party out
+                    of the four parties. The Party values whatever things haven't already been valued and
+                    is vehemently against whatever things have already been valued.  */}
             <br />
             <hr />
             <br />

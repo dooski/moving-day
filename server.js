@@ -2,11 +2,12 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/index");
+const cors = require("cors")
 
 //Middleware
 const app = express();
-const PORT = process.env.PORT || 6969;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,13 +19,14 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes for views and API
 app.use(routes);
+app.use(cors())
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/movingday", {
-//     useNewUrlParser: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true
-// });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/movingday", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+});
 
 // Start the API server
 app.listen(PORT, function () {

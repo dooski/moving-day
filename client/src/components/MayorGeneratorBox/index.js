@@ -1,5 +1,5 @@
 import React, { useState, createRef } from 'react';
-import MayorMaker from '../../utils/mayor'
+import API from '../../utils/API'
 import { Twemoji } from 'react-emoji-render';
 import { Typography, Container, Grid, Button, Card, CardContent } from '@material-ui/core'
 
@@ -11,18 +11,19 @@ function MayorGeneratorBox() {
 
     const section = {
         height: "100%",
+        boxShadow: "10px 10px black",
     };
 
     const loch = {
         background: "#698F3F",
         color: "white",
-        padding: 10
+        padding: 10,
     }
 
     const business = {
         background: "#773344",
         color: "white",
-        padding: 10
+        padding: 10,
     }
 
     const jazz = {
@@ -85,30 +86,43 @@ function MayorGeneratorBox() {
     }
 
     function NMG() {
-        let mayor = MayorMaker.Ness()
-        console.log(mayor)
-        setCurrentMayor(mayor)
-        window.scrollTo(0, mayorRef.current.offsetTop)
+        API.makeMayorNess()
+            .then((res) => {
+                let mayor = res.data
+                console.log(mayor)
+                setCurrentMayor(mayor)
+            })
+            .then(window.scrollTo(0, mayorRef.current.offsetTop))
     }
 
     function BMG() {
-        let mayor = MayorMaker.Biz()
-        console.log(mayor)
-        setCurrentMayor(mayor)
-        window.scrollTo(0, mayorRef.current.offsetTop)
+        API.makeMayorBiz()
+            .then((res) => {
+                let mayor = res.data
+                console.log(mayor)
+                setCurrentMayor(mayor)
+            })
+            .then(window.scrollTo(0, mayorRef.current.offsetTop))
     }
 
     function JMG() {
-        let mayor = MayorMaker.Jazz()
-        console.log(mayor)
-        setCurrentMayor(mayor)
-        window.scrollTo(0, mayorRef.current.offsetTop)
+        API.makeMayorJazz()
+            .then((res) => {
+                let mayor = res.data
+                console.log(mayor)
+                setCurrentMayor(mayor)
+            })
+            .then(window.scrollTo(0, mayorRef.current.offsetTop))
     }
 
     function FMG() {
-        let mayor = MayorMaker.Fourth()
-        setCurrentMayor(mayor)
-        window.scrollTo(0, mayorRef.current.offsetTop)
+        API.makeMayorFourth()
+            .then((res) => {
+                let mayor = res.data
+                console.log(mayor)
+                setCurrentMayor(mayor)
+            })
+            .then(window.scrollTo(0, mayorRef.current.offsetTop))
     }
 
     function attrTranslate(x) {

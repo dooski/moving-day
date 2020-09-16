@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home.js"
 import MGB from "./components/MayorGeneratorBox"
 import logo from './logo.svg';
-import './App.css';
 import 'fontsource-roboto';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@material-ui/core'
+import './App.css';
 
 const theme = createMuiTheme({
   palette: {

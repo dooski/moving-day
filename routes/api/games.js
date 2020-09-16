@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const gamesController = require("../../controllers/gamesController");
 
-//create a game
+//create a game e 
 router.route("/")
     .post(gamesController.create);
 

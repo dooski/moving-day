@@ -6,7 +6,9 @@ import logo from "../imgs/logo.png"
 function About() {
     const AboutBox = {
         background: "#000000",
+        width: "90%",
         marginTop: 35,
+        marginBottom: 35,
         boxShadow: "5px 5px 10px 10px white",
         borderRadius: 20,
         padding: 30
@@ -15,7 +17,8 @@ function About() {
     const center = {
         display: "block",
         marginLeft: "auto",
-        marginRight: "auto"
+        marginRight: "auto",
+        maxWidth: "100%"
     }
 
     return (

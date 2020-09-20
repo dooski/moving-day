@@ -12,5 +12,8 @@ export default {
     },
     makeMayorFourth: function () {
         return axios.get("/api/utils/mayor/fourth")
+    },
+    makeUserLogin: function (userData) {
+        return axios.post("/api/auth/register_login", userData)
     }
 }

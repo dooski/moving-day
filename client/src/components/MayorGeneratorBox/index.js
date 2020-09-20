@@ -10,7 +10,6 @@ function MayorGeneratorBox() {
     const mayorRef = createRef()
 
     const section = {
-        height: "100%",
         boxShadow: "10px 10px black",
     };
 
@@ -64,6 +63,12 @@ function MayorGeneratorBox() {
         display: "block",
         marginTop: 10,
         marginBottom: 10,
+    }
+
+    const buttonContent = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     }
 
     const emoji = {
@@ -171,9 +176,11 @@ function MayorGeneratorBox() {
                                 flavor text.</Typography>
                                 <br />
                                 <Button style={button} id="ness" onClick={NMG}>
-                                    <Twemoji style={emoji} text=":dragon_face:" />
-                                   BLESS THIS NESS
-                                    <Twemoji style={emoji} text=":dragon_face:" />
+                                    <Grid container spacing={1} style={buttonContent}>
+                                        <Grid item sm={2}><Twemoji style={emoji} text=":dragon_face:" /></Grid>
+                                        <Grid item sm={8}>BLESS THIS NESS</Grid>
+                                        <Grid item sm={2}><Twemoji style={emoji} text=":dragon_face:" /></Grid>
+                                    </Grid>
                                 </Button>
                             </div>
                         </Card>
@@ -193,9 +200,11 @@ function MayorGeneratorBox() {
                                 of sexual innuendos.</Typography>
                                 <br />
                                 <Button style={button} id="biz" onClick={BMG}>
-                                    <Twemoji style={emoji} text=":city_sunrise:" />
-                                    STONKS SEASON
-                                    <Twemoji style={emoji} text=":city_sunrise:" />
+                                    <Grid container spacing={1} style={buttonContent}>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":moneybag:" /></Grid>
+                                        <Grid item xs={8}>STONKS SEASON</Grid>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":moneybag:" /></Grid>
+                                    </Grid>
                                 </Button>
                             </div>
                         </Card>
@@ -214,9 +223,11 @@ function MayorGeneratorBox() {
                                 giving more oppurtunities to increase Cool Points.</Typography>
                                 <br />
                                 <Button style={button} id="jazz" onClick={JMG}>
-                                    <Twemoji style={emoji} text=":saxophone:" />
-                                    THAT'S JAZZ, BABY!
-                                    <Twemoji style={emoji} text=":saxophone:" />
+                                    <Grid container spacing={1} style={buttonContent}>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":saxophone:" /></Grid>
+                                        <Grid item xs={8}>THAT'S JAZZ, BABY</Grid>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":saxophone:" /></Grid>
+                                    </Grid>
                                 </Button>
                             </div>
                         </Card>
@@ -234,18 +245,17 @@ function MayorGeneratorBox() {
                     pro-dodgeball, pro-disco, and anti-candles.</Typography>
                                 <br />
                                 <Button style={button} id="fourth" onClick={FMG}>
-                                    <Twemoji style={emoji} text=":four:" />
-                                    HEAD EMPTY NO THOUGHTS
-                                    <Twemoji style={emoji} text=":four:" />
+                                    <Grid container spacing={1} style={buttonContent}>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":four:" /></Grid>
+                                        <Grid item xs={8}>HEAD EMPTY NO THOUGHTS</Grid>
+                                        <Grid item xs={2}><Twemoji style={emoji} text=":four:" /></Grid>
+                                    </Grid>
                                 </Button>
                             </div>
                         </Card>
                     </div>
                 </Grid>
-            </Grid>{/* Fourth Party
-                    body: Finally, a Party for the rest of us! The Fourth Party is the fourth party out
-                    of the four parties. The Party values whatever things haven't already been valued and
-                    is vehemently against whatever things have already been valued.  */}
+            </Grid>
             <br />
             <hr />
             <br />

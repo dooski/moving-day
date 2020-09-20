@@ -4,13 +4,18 @@ html, body {
   background-color: #121013;
   font-family: 'Roboto', sans-serif;
   background-image:
-    radial-gradient(#000000 20%, transparent 0),
+    radial-gradient(#272932 20%, transparent 0),
     radial-gradient(#000000 20%, transparent 0);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
 }
 
 button:hover { 
-  transform:scale(1.1, 1.1);
+  transform:scale(1.05, 1.05);
   transition: all .3s ease-in-out;
+}
+
+a{
+  color: #E8FFB7;
+  text-decoration: none;
 }

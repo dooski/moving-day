@@ -57,7 +57,6 @@ function MayorGeneratorBox() {
     }
 
     const buttonContent = {
-        display: "flex",
         justifyContent: "center",
         alignItems: "center"
     }

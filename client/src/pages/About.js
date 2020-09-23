@@ -25,10 +25,10 @@ function About() {
         <Container style={AboutBox}>
             <div>
                 <Typography variant="h2">It is, regrettably, <b><i>Moving Day</i></b>.</Typography>
-                <Typography variant="h5">A bad game in development about cities, moving, and being cooler than your friends.</Typography>
                 <hr />
                 <br />
-                <Typography variant="body"><b>Moving Day</b> exists in a world where everyone rents and everyone must move
+                <Typography variant="body1"><b>Moving Day</b> is bad game in development about cities, moving, and being cooler than your friends.
+                The game exists in a world where everyone rents and everyone must move
                 when the Mayor decides it is, regrettably, Moving Day for all. Culture is dominated by Moving Day; it's
                 all anyone wants to talk about. Moving Days come on average every three or four days,
                 and every day in between is just getting ready for the next one. Scouting out the rarest apartments,
@@ -38,7 +38,7 @@ function About() {
                 moving, but I mean, that wouldn't be very cool. </Typography>
                 <br />
                 <br />
-                <Typography variant="body">So where is this game? Welp, it's not made yet. <b>Moving Day</b> is still
+                <Typography variant="body1">So where is this game? Welp, it's not made yet. <b>Moving Day</b> is still
                 deep in the early stages of development, but this site will for now serve as a hub for the different
                 bits and pieces that will eventually comprise what industry experts call a full game. For now, you can run through the sorts
                 of Mayors who will rule and ruin your lives. Soon, you'll be able to generate the cities where those

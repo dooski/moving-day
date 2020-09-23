@@ -17,4 +17,8 @@ module.exports = {
         let mayor = generator.Fourth()
         res.json(mayor)
     },
+    City: function (req, res) {
+        let city = generator.City()
+        res.json(city)
+    }
 }

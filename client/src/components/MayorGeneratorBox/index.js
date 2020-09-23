@@ -1,7 +1,8 @@
 import React, { useState, createRef } from 'react';
 import API from '../../utils/API'
 import { Twemoji } from 'react-emoji-render';
-import { Typography, Container, Grid, Button, Card, CardContent } from '@material-ui/core'
+import { Typography, Container, Grid, Button, Card, CardContent } from '@material-ui/core';
+import MayorCard from '../MayorCard'
 
 function MayorGeneratorBox() {
 
@@ -37,16 +38,6 @@ function MayorGeneratorBox() {
         padding: 10
     }
 
-    const mayorcard = {
-        background: "black",
-        boxShadow: "5px 5px 10px 10px white",
-        borderRadius: 20,
-        color: "white",
-        maxWidth: 500,
-        margin: "0 auto",
-        display: "block",
-    }
-
     const title = {
         fontWeight: 700,
         fontStyle: "italic"
@@ -80,10 +71,6 @@ function MayorGeneratorBox() {
     const body = {
         textAlign: "justify",
         textJustify: "inter-word"
-    }
-
-    const right = {
-        textAlign: "right"
     }
 
     const empty = {
@@ -130,21 +117,6 @@ function MayorGeneratorBox() {
             .then(window.scrollTo(0, mayorRef.current.offsetTop))
     }
 
-    function attrTranslate(x) {
-        if (x === 0) {
-            return "None at All"
-        } if (x === 1) {
-            return "Abysmal"
-        } if (x === 2) {
-            return "Low"
-        } if (x === 3) {
-            return "Average"
-        } if (x === 4) {
-            return "High"
-        } if (x === 5) {
-            return "Super Duper High"
-        }
-    }
     return (
         <Container maxWidth="lg">
             <hr />
@@ -260,17 +232,11 @@ function MayorGeneratorBox() {
             <hr />
             <br />
             {currentMayor.name ? (
-                <Card style={mayorcard}>
-                    <CardContent >
-                        <Typography variant="h6"><i>Bow down before . . .</i></Typography>
-                        <Typography variant="h4"><b><u>{currentMayor.name.toUpperCase()}</u></b></Typography>
-                        <Typography variant="h6" style={right}><i>of the <b>{currentMayor.party}</b>.</i></Typography>
-                        <hr />
-                        <Typography variant="h6">Loyalty: {attrTranslate(currentMayor.loyalty)}</Typography>
-                        <Typography variant="h6">Competency: {attrTranslate(currentMayor.competent)}</Typography>
-                        <Typography variant="h6">Voidism: {attrTranslate(currentMayor.voidism)}</Typography>
-                    </CardContent>
-                </Card>) : (
+                <MayorCard name={currentMayor.name}
+                    party={currentMayor.party}
+                    loyalty={currentMayor.loyalty}
+                    competent={currentMayor.competent}
+                    voidism={currentMayor.voidism} />) : (
                     <div style={empty}></div>
                 )}
 

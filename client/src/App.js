@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import About from "./pages/About.js"
 import RMG from "./pages/RMG.js"
-import MGB from "./components/MayorGeneratorBox"
-import logo from './logo.svg';
+import RCG from "./pages/RCG.js"
 import 'fontsource-roboto';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, Button, ButtonGroup } from '@material-ui/core'
@@ -31,13 +30,14 @@ function App() {
             <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
               <Button><Link to="/"><i>Home</i></Link></Button>
               <Button><Link to="/rmg"><i>Random Mayor Generator</i></Link></Button>
-              <Button><i>uh nothing</i></Button>
+              <Button><Link to="/rcg"><i>Random City Generator</i></Link></Button>
             </ButtonGroup>
           </Toolbar>
         </AppBar>
         <Switch>
           <Route exact path="/" component={About} />
           <Route exact path="/rmg" component={RMG} />
+          <Route exact path="/rcg" component={RCG} />
         </Switch>
       </ThemeProvider>
     </Router>

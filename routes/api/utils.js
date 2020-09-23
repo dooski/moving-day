@@ -14,4 +14,7 @@ router.route("/mayor/jazz")
 router.route("/mayor/fourth")
     .get(genController.MayorFourth)
 
+router.route("/city")
+    .get(genController.City)
+
 module.exports = router;

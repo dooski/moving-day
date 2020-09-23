@@ -23,8 +23,6 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes for views and API
 
-app.use(cors())
-
 //Connect to Atlas
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.MDBADMIN + ":" + process.env.MDBPW + "@movingday0.3acpb.gcp.mongodb.net/movingday?retryWrites=true&w=majority";

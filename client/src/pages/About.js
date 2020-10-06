@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, Redirect } from "react-router-dom";
 import "../App.css"
 import { Typography, Container, Grid, Button, Card, CardContent } from '@material-ui/core'
 import logo from "../imgs/logo.png"
+import Axios from 'axios';
+import API from "../utils/API";
 
 function About() {
     const AboutBox = {
@@ -18,7 +21,8 @@ function About() {
         display: "block",
         marginLeft: "auto",
         marginRight: "auto",
-        maxWidth: "100%"
+        marginTop: "20px",
+        maxWidth: "500px"
     }
 
     return (

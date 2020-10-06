@@ -5,7 +5,6 @@ const session = require("express-session");
 const passport = require("./passport/setup.js")
 const mongoose = require("mongoose");
 const routes = require("./routes/index");
-const cors = require("cors");
 const MongoStore = require("connect-mongo")(session);
 
 //Middleware
@@ -24,23 +23,26 @@ if (process.env.NODE_ENV === "production") {
 // Routes for views and API
 
 //Connect to Atlas
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.MDBADMIN + ":" + process.env.MDBPW + "@movingday0.3acpb.gcp.mongodb.net/movingday?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    const newItem = {
-        "word": "Hello"
-    }
-    collection.insertOne(newItem).then(result => console.log("we did it"))
-    client.close();
-});
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//     const collection = client.db("test").collection("devices");
+//     const newItem = {
+//         "word": "Hello"
+//     }
+//     collection.insertOne(newItem).then(result => {
+//         console.log("we did it")
+//         client.close();
+//     })
+// });
 
 // Connect mongoose to the Mongo DB
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
     .then(console.log(`MongoDB connected ${uri}`))
     .catch(err => console.log(err));
@@ -55,6 +57,7 @@ app.use(
         store: new MongoStore({ mongooseConnection: mongoose.connection })
     })
 );
+
 app.use(passport.initialize());
 app.use(passport.session())
 

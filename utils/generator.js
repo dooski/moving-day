@@ -1,4 +1,4 @@
-const names = require("./names.json")
+const names = require("../data/names.json")
 //names.Ness.first , names.Ness.last
 
 function zp(z) {

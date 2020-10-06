@@ -15,10 +15,6 @@ button:hover {
   transition: all .3s ease-in-out;
 }
 
-/* p{
-  text-align: justify;
-  text-justify: inter-word
-} */
 a{
   color: #E8FFB7;
   text-decoration: none;

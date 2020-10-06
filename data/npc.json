@@ -1,0 +1,104 @@
+{
+    "roomies": {
+        "coyote": {
+            "info": {
+                "fullName": "Coyote Kickflip",
+                "firstName": "Coyote",
+                "lastName": "Kickflip",
+                "desc": "A skater with a buncha tattoos of orcas down their right arm. Smells better than you'd think."
+            },
+            "stats": {
+                "buffName": "Grassmaster",
+                "buffDesc": "This townie has weed. +1 cool points per day when living together.",
+                "buffEffect": "daily",
+                "buffBoost": 1
+            },
+            "dialogue": {
+                "greetings": {
+                    "first": "Heyo! It's me, Coyote Kickflip. I hope you haven't heard of me before.",
+                    "second": "Remember me? From, like, before?",
+                    "normal": "Hey, dude!"
+                },
+                "responses": {
+                    "yes": "Sure!",
+                    "no": "Hmmm nope. Afraid not.",
+                    "strongYes": "Hell yes!",
+                    "strongNo": "Not a chance in hell!"
+                },
+                "chatting": {
+                    "morning": [
+                        "Rise and grind, that's what I've never said.",
+                        "I had a dream about a dog? And he was, like, trying to find his bone? But I WAS THE BONE?????",
+                        "Good morning! Decided to read the paper today, you know, as a bit. It's rough out there."
+                    ],
+                    "day": [
+                        "You ever get the feeling life is poorly scripted?",
+                        "I got a chai latte this morning and my mouth still tastes the tingles.",
+                        "You been to the post office lately? They got a new person at the desk, and dude, they are beautiful."
+                    ],
+                    "evening": [
+                        "My friends used to joke that I was a vampire, which is crazy because I don't remember telling them I was. Haha, I'm kidding. ...",
+                        "Burning the stick at both of the candles, eh? Yeah? Right? That's a thing.",
+                        "I talked to Meg earlier and she was telling me how she locked her keys outside of her car and she was locked in her car somehow?"
+                    ],
+                    "endings": [
+                        "I'm high.",
+                        "Or something.",
+                        "",
+                        ""
+                    ]
+                }
+            }
+        },
+        "meg": {
+            "info": {
+                "fullName": "Meg Specksgoor",
+                "firstName": "Meg",
+                "lastName": "Specksgoor",
+                "desc": "Your friendly neighborhood barista with curly hair and a baseball bat. Doesn't own an alarm clock."
+            },
+            "stats": {
+                "buffName": "Caffiend",
+                "buffDesc": "This townie has coffee. +1 action per day when living together.",
+                "buffEffect": "action",
+                "buffBoost": 1
+            },
+            "dialogue": {
+                "greetings": {
+                    "first": "Hi, I'm Meg! I'm delightful but also I do carry a baseball bat with me at all times.",
+                    "second": "Ah, I'm Meg, look at me, I'm Meg Specksgoor!",
+                    "normal": "Ahhhh!"
+                },
+                "responses": {
+                    "yes": "Yeah!",
+                    "no": "Ehhhh!",
+                    "strongYes": "YESSS.",
+                    "strongNo": "What? Dude, no."
+                },
+                "chatting": {
+                    "morning": [
+                        "I had, like, fifteen pancakes when I woke up this morning! It hurts!",
+                        "Last night, I dropped my computer in the sink and tried to dry it in the microwave, and long story short, it worked great.",
+                        "Should I get a new bat? Mine's starting to have too many dents in it."
+                    ],
+                    "day": [
+                        "Just saw a man catch and eat a blue bird. Like, literally as you walked up to me. Right through the window behind you. You can still seem him walking away. There he goes. I didn't expect that here.",
+                        "Fun fact: I used to do slam poetry. Now I have a baseball bat.",
+                        "People keep smashing plates. They think it's cool, but you know what's really cool? Not smashing my god damn plates."
+                    ],
+                    "evening": [
+                        "Getting very sleepy.",
+                        "I'm writing a book about a crow who turns into a person for a day in order to find out what jury duty is like.",
+                        "Gonna have to start mopping the floors soon, so if you could not smash any plates, I'd appreciate it."
+                    ]
+                },
+                "endings": [
+                    "I'm Meg Specksgoor!",
+                    "",
+                    "",
+                    ""
+                ]
+            }
+        }
+    }
+}

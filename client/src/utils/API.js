@@ -18,8 +18,12 @@ export default {
         return axios.get("/api/utils/city")
     },
     //User routes
-    makeUserLogin: function (userData) {
-        return axios.post("/api/auth/register_login", userData)
+    userLogin: function (userData) {
+        console.log(userData)
+        return axios.post("/api/auth/login", userData)
+    },
+    userRegister: function (userData) {
+        return axios.post("/api/auth/register", userData)
     }
 
 }

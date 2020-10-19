@@ -44,9 +44,8 @@ function About() {
                 <br />
                 <Typography variant="body1">So where is this game? Welp, it's not made yet. <b>Moving Day</b> is still
                 deep in the early stages of development, but this site will for now serve as a hub for the different
-                bits and pieces that will eventually comprise what industry experts call a full game. For now, you can run through the sorts
-                of Mayors who will rule and ruin your lives. Soon, you'll be able to generate the cities where those
-                Mayors will rule and ruin, as well as the Townies you'll bump into.</Typography>
+                bits and pieces that will eventually comprise what industry experts call a full game. For now, we are
+                currently in closed alpha. </Typography>
             </div>
             <img src={logo} style={center}></img>
         </Container>

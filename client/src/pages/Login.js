@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom"
+import { NotificationManager } from "react-notifications"
 import "../App.css"
-import { Snackbar, Typography, Container, TextField, Grid, Button, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core'
+import { Typography, Container, TextField, Grid, Button, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@material-ui/core'
 import styled from 'styled-components'
 import API from "../utils/API";
 
@@ -41,9 +42,7 @@ function Login() {
     const [value, setValue] = useState("register");
     const [type, setType] = useState("");
     const [key, setKey] = useState("")
-    const [no, setNo] = useState(false)
     const [redirect, setRedirect] = useState(null)
-
 
 
     function keyCheck(key) {
@@ -61,7 +60,7 @@ function Login() {
                 type: type,
                 email: email,
                 password: password,
-                alpha: 1
+                alpha: allowed
             };
             API.userRegister(userData)
                 .then(res => {
@@ -69,28 +68,21 @@ function Login() {
                     API.userLogin(userData)
                         .then(res => {
                             console.log(res)
-                            // setUserId(res.data.id)
+                            NotificationManager.success("Welcome!", "You're In!", 4000)
                             setRedirect('/game')
                         })
                         .catch(err => {
                             console.log(err);
                             console.log(err.response)
+                            NotificationManager.error("Something is....... wrong", "uh oh!", 4000)
                         })
                 })
                 .catch(err => {
                     console.log(err);
                     console.log(err.response)
-                    // setFail(true)
+                    NotificationManager.error("Something is....... wrong", "uh oh!", 4000)
                 })
-        } else setNo(true)
-    }
-
-    const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return
-        }
-
-        setNo(false)
+        } else NotificationManager.warning("that isn't the key /:", "lmao", 4000)
     }
 
     const Login = e => {
@@ -101,23 +93,19 @@ function Login() {
             password: password
         };
         API.userLogin(userData)
-            .then(res => { console.log(res) })
+            .then(res => {
+                console.log(res)
+                NotificationManager.success("Welcome back!", "Heyooooooo!", 4000)
+                setRedirect('/game')
+            })
             .catch(err => {
                 console.log(err);
                 console.log(err.response)
+                NotificationManager.error("Something is....... wrong", "uh oh!", 4000)
             })
     }
 
-    const Test = e => {
-        console.log()
-        API.loadUser()
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+
     const handleChange = (e) => {
         setValue(e.target.value);
     }
@@ -202,20 +190,7 @@ function Login() {
                                 <Button variant="contained" onClick={Register}>Register</Button>)}
                     </Container>
                 </form>
-                <Button variant="contained" onClick={Test}>Test</Button>
             </div>
-            <Snackbar
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                }}
-                open={no}
-                onClose={handleClose}
-                message="incorrect alpha key :("
-                action={
-                    <Button variant="contained" onClick={handleClose} size="small">OKAY</Button>
-                }
-            />
         </Container>
     )
 }

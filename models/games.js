@@ -5,10 +5,8 @@ const Schema = mongoose.Schema;
 //round defaults to 0, once game is started by p1, set to round 1
 const gameSchema = new Schema(
     {
-        id: Number,
         cityName: String,
         mayorName: String,
-        code: String,
         round: Number,
         players: {
             p1: {

@@ -4,8 +4,6 @@ import { Typography, Container, Grid, Button, Box } from '@material-ui/core';
 
 function Interface() {
 
-
-
     const button = {
         background: "black",
         borderRadius: "20px",

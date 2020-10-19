@@ -29,9 +29,11 @@
     "express-session": "^1.17.1",
     "fontsource-roboto": "^3.0.3",
     "if-env": "^1.0.4",
+    "moment": "^2.29.1",
     "mongoose": "^5.9.25",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "react-moment": "^1.0.0",
     "styled-components": "^5.2.0"
   },
   "repository": {

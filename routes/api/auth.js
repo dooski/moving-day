@@ -4,22 +4,20 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 const passport = require("passport");
 
-// router.post("/register_login", (req, res, next) => {
-//     passport.authenticate("local", function (err, user, info) {
-//         if (err) {
-//             return res.status(400).json({ errors: err });
-//         }
-//         if (!user) {
-//             return res.status(400).json({ errors: "No user found" });
-//         }
-//         req.logIn(user, function (err) {
-//             if (err) {
-//                 return res.status(400).json({ errors: err });
-//             }
-//             return res.status(200).json({ success: `logged in ${user.id}` });
-//         });
-//     })(req, res, next);
-// });
+router.route("/user").get(function (req, res) {
+    console.log(req.user)
+    User.findOne({
+        where: {
+            id: req.user._id
+        },
+    })
+        .then(() => {
+            res.json({ id: req.user, username: req.user.username })
+        })
+        .catch((err) => res.status(422).json(err))
+}
+)
+
 
 router.route("/login").post(
     passport.authenticate("local"), (req, res) => {
@@ -49,6 +47,11 @@ router.route("/register").post(function (req, res) {
                 })
         })
     })
+})
+
+router.route("/logout").get(function (req, res) {
+    req.logout();
+    res.status(200).json({ message: 'logged out' })
 })
 
 module.exports = router;

@@ -23,7 +23,11 @@ export default {
         return axios.post("/api/auth/login", userData)
     },
     userRegister: function (userData) {
+        console.log(userData)
         return axios.post("/api/auth/register", userData)
+    },
+    loadUser: function (userData) {
+        return axios.post("/user", userData)
     }
 
 }

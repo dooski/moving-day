@@ -1,5 +1,4 @@
 const names = require("../data/names.json")
-//names.Ness.first , names.Ness.last
 
 function zp(z) {
     return Math.floor(Math.random() * z)

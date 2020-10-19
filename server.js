@@ -23,21 +23,7 @@ if (process.env.NODE_ENV === "production") {
 // Routes for views and API
 
 //Connect to Atlas
-// const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.MDBADMIN + ":" + process.env.MDBPW + "@movingday0.3acpb.gcp.mongodb.net/movingday?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//     const collection = client.db("test").collection("devices");
-//     const newItem = {
-//         "word": "Hello"
-//     }
-//     collection.insertOne(newItem).then(result => {
-//         console.log("we did it")
-//         client.close();
-//     })
-// });
-
-// Connect mongoose to the Mongo DB
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -57,11 +43,11 @@ app.use(
         store: new MongoStore({ mongooseConnection: mongoose.connection })
     })
 );
-
 app.use(passport.initialize());
 app.use(passport.session())
-
 app.use(routes);
+
+
 // Start the API server
 app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

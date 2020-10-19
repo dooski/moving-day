@@ -4,7 +4,7 @@ import { Typography, Container, Grid, Button, Box } from '@material-ui/core';
 
 function Interface() {
 
-    const [currentOpponent, setCurrentOpponent] = useState({})
+
 
     const button = {
         background: "black",
@@ -22,30 +22,26 @@ function Interface() {
 
     const body = {
         textAlign: "justify",
-        textJustify: "inter-word"
+        textJustify: "inter-word",
+        margin: "5px"
     }
 
     const battleBox = {
-        width: "350px",
+        width: "500px",
         border: "4px solid white",
-        length: "500px"
+        height: "500px",
+        background: "black"
     }
 
     return (
         <div>
-            <Container maxWidth="lg">
-                <Box style={battleBox}>
+            <Container maxWidth="lg" style={battleBox}>
+                <div style={body}>
+                    <Typography variant="h3">Hello, Dooski.</Typography>
+                    <hr />
 
-                </Box>
-            </Container>
-            {currentOpponent.name ? (
-                <div>
-                    {/* content goes here */}
                 </div>
-            ) : (
-                    <div></div>
-                )}
-            <br></br>
+            </Container>
         </div>
     )
 }

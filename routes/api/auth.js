@@ -30,11 +30,15 @@ router.route("/register").post(function (req, res) {
     console.log(req.body)
     let email = req.body.email
     let password = req.body.password
-    const newUser = new User({ email, password });
+    let type = req.body.type
+    let username = req.body.username
+    let alpha = req.body.alpha
+    const newUser = new User({ username, type, email, password, alpha });
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
             newUser.password = hash;
+            console.log(newUser)
             newUser
                 .save()
                 .then(user => {
@@ -46,22 +50,5 @@ router.route("/register").post(function (req, res) {
         })
     })
 })
-
-// const newUser = new User({ email, password });
-// // Hash password before saving in database
-// bcrypt.genSalt(10, (err, salt) => {
-//     bcrypt.hash(newUser.password, salt, (err, hash) => {
-//         if (err) throw err;
-//         newUser.password = hash;
-//         newUser
-//             .save()
-//             .then(user => {
-//                 return done(null, user);
-//             })
-//             .catch(err => {
-//                 return done(null, false, { message: err });
-//             });
-//     });
-// });
 
 module.exports = router;

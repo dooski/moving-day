@@ -31,6 +31,9 @@ export default {
     },
     logoutUser: function () {
         return axios.get("/api/auth/logout")
+    },
+    loadAllUsers: function () {
+        return axios.get("/api/auth/citizens")
     }
 
 }

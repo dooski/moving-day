@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import API from '../../../utils/API'
 import { Typography, Container, Grid, Button, Box } from '@material-ui/core';
 
-function Interface() {
-
+function Interface(props) {
+    let user = props.props
     const button = {
         background: "black",
         borderRadius: "20px",
@@ -25,9 +25,9 @@ function Interface() {
     }
 
     const battleBox = {
-        width: "500px",
+        width: "100%",
+        maxWidth: "500px",
         border: "4px solid white",
-        height: "500px",
         background: "black"
     }
 
@@ -35,9 +35,11 @@ function Interface() {
         <div>
             <Container maxWidth="lg" style={battleBox}>
                 <div style={body}>
-                    <Typography variant="h3">Hello, Dooski.</Typography>
+                    <Typography variant="h3">Hello, {user.username}!</Typography>
                     <hr />
-
+                    <Typography variant="h5">You <i>do</i> seem pretty {user.type}! Please stand by
+                    indefinitely while a society is formed.</Typography>
+                    <br />
                 </div>
             </Container>
         </div>

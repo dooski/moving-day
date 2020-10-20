@@ -21,5 +21,13 @@ module.exports = {
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
+    },
+
+    findAllUsers: function (req, res) {
+        db.User
+            .find(req.query)
+            .then(dbModel => res.json(dbModel))
+            .catch((err) => res.status(422).json(err))
     }
 }
+// { _id: { $ne: req.user._id } }, { username: 1, type: 1 }

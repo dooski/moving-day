@@ -34,6 +34,7 @@ function App() {
       .then((res) => {
         console.log(res.data);
         NotificationManager.info("smell ya later", "bye bye!", 4000)
+        return <Redirect to="/" />
       })
       .catch((err) => {
         console.log(err)

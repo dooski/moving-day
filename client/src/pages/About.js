@@ -22,6 +22,7 @@ function About() {
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: "20px",
+        width: "80%",
         maxWidth: "500px"
     }
 

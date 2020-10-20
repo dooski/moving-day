@@ -10,4 +10,7 @@ router.route("/:id")
     .get(gamesController.findById)
     .put(gamesController.update)
 
+router.route("/citizens")
+    .get(gamesController.findAllUsers)
+
 module.exports = router;

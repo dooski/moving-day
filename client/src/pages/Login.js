@@ -151,7 +151,7 @@ function Login() {
                         {value == "register" ? (
                             <Grid item xl={6}>
                                 <RadioGroup row aria-label="type" name="type" value={type} onChange={handleChangeType}>
-                                    <FormControlLabel value="nerd" control={<Radio />} label="Nerd" />
+                                    <FormControlLabel value="nerdy" control={<Radio />} label="Nerdy" />
                                     <FormControlLabel value="cool" control={<Radio />} label="Cool" />
                                 </RadioGroup>
                             </Grid>) : (<div></div>)}

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, Grid } from "@material-ui/core"
 
 function TownieCards(props) {
+    console.log(props)
     const card = {
         background: "black",
         borderRadius: "20px",
@@ -27,10 +28,10 @@ function TownieCards(props) {
             <br></br>
             <Grid container spacing={5}>
                 {props.townies.map((townie) => (
-                    <Grid item lg={3} sm={6}>
+                    <Grid item>
                         <div style={card}>
                             <div style={cardContent}>
-                                <Typography variant="h6"><b><i>{townie.name}</i></b></Typography>
+                                <Typography variant="h6"><b><i>{townie.username}</i></b></Typography>
                             </div>
                             <div style={cardContent}>
                                 <Typography variant="subtitle1">who is {townie.type}!</Typography>

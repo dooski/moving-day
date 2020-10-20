@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React from "react";
 import "../App.css"
-import { Typography, Container, Grid, Button, Card, CardContent } from '@material-ui/core'
+import { Typography, Container } from '@material-ui/core'
 import logo from "../imgs/logo.png"
-import Axios from 'axios';
-import API from "../utils/API";
 
 function About() {
     const AboutBox = {

@@ -34,7 +34,7 @@ function App() {
       .then((res) => {
         console.log(res.data);
         NotificationManager.info("smell ya later", "bye bye!", 4000)
-        return <Redirect to="/" />
+        return <Redirect to="/login" />
       })
       .catch((err) => {
         console.log(err)
@@ -50,7 +50,7 @@ function App() {
               {/* <Button><Link to="/rmg"><i>Random Mayor Generator</i></Link></Button>
               <Button><Link to="/rcg"><i>Random City Generator</i></Link></Button> */}
               <Button><Link to="/game"><i>Alpha</i></Link></Button>
-              <Button onClick={Logout}>Logout</Button>
+              <Button onClick={Logout}><Link to="/"><i>Logout</i></Link></Button>
             </ButtonGroup>
           </Toolbar>
         </AppBar>

@@ -20,6 +20,7 @@ function Game() {
     const card = {
         background: "black",
         borderRadius: "20px",
+        maxWidth: "450px",
         color: "white",
         padding: 10,
         fontSize: 16,

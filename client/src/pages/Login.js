@@ -176,7 +176,7 @@ function Login() {
                                 <MyTextField
                                     variant="outlined"
                                     type="email"
-                                    label="Key (leave blank if none)"
+                                    label="Key"
                                     onChange={(e) => setKey(e.target.value)}
                                 />
                             </Grid>

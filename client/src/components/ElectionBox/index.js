@@ -81,7 +81,9 @@ function ElectionBox(props) {
     const titleBox = {
         background: "black",
         textAlign: "center",
-        padding: 20
+        padding: 20,
+        borderRadius: 40,
+        maxWidth: "800px"
     }
 
     function voteNess() {

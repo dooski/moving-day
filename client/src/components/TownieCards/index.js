@@ -5,15 +5,16 @@ function TownieCards(props) {
     console.log(props)
     const card = {
         background: "black",
+        maxWidth: "220px",
         borderRadius: "20px",
         color: "white",
-        padding: 10,
+        padding: 7,
         fontSize: 16,
-        minHeight: 50,
+        minHeight: 20,
         margin: "0 auto",
         display: "block",
-        marginTop: 5,
-        marginBottom: 5,
+        marginTop: 2,
+        marginBottom: 2,
         boxShadow: "0 0 20px #6EFAFB"
     }
 
@@ -25,22 +26,17 @@ function TownieCards(props) {
 
     return (
         <Container maxWidth="xl">
-            <br></br>
             <Grid container spacing={1}>
                 {props.townies.map((townie) => (
-                    <Grid item>
+                    <Grid item xs={12}>
                         <div style={card}>
                             <div style={cardContent}>
-                                <Typography variant="h6"><b><i>{townie.username}</i></b></Typography>
-                            </div>
-                            <div style={cardContent}>
-                                <Typography variant="subtitle1">who is {townie.type}!</Typography>
+                                <Typography variant="body1"><i><b>{townie.username}</b> who is {townie.type}!</i></Typography>
                             </div>
                         </div>
                     </Grid>
                 ))}
             </Grid>
-            <br /><br />
         </Container>
     )
 }

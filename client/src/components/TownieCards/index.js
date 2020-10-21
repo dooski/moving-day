@@ -12,9 +12,9 @@ function TownieCards(props) {
         minHeight: 50,
         margin: "0 auto",
         display: "block",
-        marginTop: 10,
-        marginBottom: 10,
-        boxShadow: "0 0 40px #6EFAFB"
+        marginTop: 5,
+        marginBottom: 5,
+        boxShadow: "0 0 20px #6EFAFB"
     }
 
     const cardContent = {
@@ -26,7 +26,7 @@ function TownieCards(props) {
     return (
         <Container maxWidth="xl">
             <br></br>
-            <Grid container spacing={5}>
+            <Grid container spacing={1}>
                 {props.townies.map((townie) => (
                     <Grid item>
                         <div style={card}>
@@ -40,6 +40,7 @@ function TownieCards(props) {
                     </Grid>
                 ))}
             </Grid>
+            <br /><br />
         </Container>
     )
 }

@@ -3,14 +3,15 @@ import { Redirect } from "react-router-dom"
 import "../App.css";
 import Interface from "../components/Game/Interface"
 import TownieCards from "../components/TownieCards"
+import ElectionBox from "../components/ElectionBox"
 import { Box, Container, Typography } from "@material-ui/core"
 import API from "../utils/API";
 
 function Game() {
     const [userData, setUserData] = useState()
     const [citizens, setCitizens] = useState()
+    const [game, setGame] = useState()
     const [userRedirect, setUserRedirect] = useState(0)
-    const [load, setLoad] = useState(0)
 
     const townieRow = {
         maxWidth: "600px",
@@ -20,7 +21,7 @@ function Game() {
     const card = {
         background: "black",
         borderRadius: "20px",
-        maxWidth: "450px",
+        maxWidth: "280px",
         color: "white",
         padding: 10,
         fontSize: 16,
@@ -34,7 +35,6 @@ function Game() {
         API.loadUser()
             .then((res) => {
                 setUserData(res.data)
-                setLoad(1)
             })
             .catch((err) => {
                 console.log(err);
@@ -51,31 +51,36 @@ function Game() {
             .catch((err) => {
                 console.log(err)
             })
+        API.getGame()
+            .then((res) => {
+                setGame(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }, []);
 
     if (userRedirect === 1) {
         return <Redirect to="/login" />;
     }
 
-    if (!userData || !citizens) {
+    if (!userData || !citizens || !game) {
         return <p>one sec </p>
     } else return (
         <div>
-            {console.log(userData)}
-            {load == 0 ? (
-                <div></div>) : (
-                    <Box m={5}>
-                        <Interface props={userData} />
-                        <Container style={card}>
-                            <Typography variant="subtitle1"><i>THE PROTO-SOCIETAL SOUP CURRENTLY CONSISTS OF: </i></Typography>
-                        </Container>
-                        <Container style={townieRow}>
-                            <TownieCards townies={citizens} />
-                        </Container>
-
-                    </Box>
-                )}
-        </div>
+            {console.log(game)}
+            <Box m={5}>
+                <Interface props={userData} />
+                <Container style={card}>
+                    <Typography variant="subtitle1"><i>THE PROTO-SOCIETAL BLOCK CLUB</i></Typography>
+                </Container>
+                <Container style={townieRow}>
+                    <TownieCards townies={citizens} />
+                </Container>
+                <br /><br />
+                <ElectionBox props={game} />
+            </Box>
+        </div >
     )
 }
 

@@ -35,10 +35,10 @@ function Interface(props) {
         <div>
             <Container maxWidth="lg" style={battleBox}>
                 <div style={body}>
-                    <Typography variant="h3">Hello, {user.username}!</Typography>
+                    <Typography variant="h4"><b>Hello, {user.username}!</b></Typography>
                     <hr />
-                    <Typography variant="h5">You <i>do</i> seem pretty {user.type}! Please stand by
-                    indefinitely while a society is formed.</Typography>
+                    <Typography variant="h5">A bird and a harmless frog have named your forming society: Dogsby.
+                    Please stand by indefinitely while a society is formed by a bird and a harmless frog.</Typography>
                     <br />
                 </div>
             </Container>

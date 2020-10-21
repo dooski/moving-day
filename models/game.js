@@ -7,22 +7,28 @@ const gameSchema = new Schema(
     {
         cityName: String,
         mayorName: String,
+        mayorParty: String,
         round: Number,
-        players: {
-            p1: {
+        election: {
+            ness: {
                 name: String,
-                moved: false,
-                lost: false
+                votes: Number,
+                won: false
             },
-            p2: {
+            biz: {
                 name: String,
-                moved: false,
-                lost: false
+                votes: Number,
+                won: false
             },
-            p3: {
+            jazz: {
                 name: String,
-                moved: false,
-                lost: false
+                votes: Number,
+                won: false
+            },
+            fourth: {
+                name: String,
+                votes: Number,
+                won: false
             }
         }
     }

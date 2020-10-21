@@ -17,9 +17,18 @@ export default {
     makeCity: function () {
         return axios.get("/api/utils/city")
     },
+    //game routes
+    updateGame: function (gameData) {
+        return axios.put("/api/games/5f8f85978893762fb82a3a32", gameData)
+    },
+    getGame: function () {
+        return axios.get("/api/games/5f8f85978893762fb82a3a32")
+    },
+    createGame: function (gameData) {
+        return axios.post("/api/games", gameData)
+    },
     //User routes
     userLogin: function (userData) {
-        console.log(userData)
         return axios.post("/api/auth/login", userData)
     },
     userRegister: function (userData) {
